@@ -1,0 +1,13 @@
+# Core runtime
+python-dotenv==1.0.1
+
+# Google Sheets access
+gspread==6.1.4
+google-auth==2.33.0
+
+# Twilio SMS
+twilio==9.2.3
+
+# Time parsing and zones
+python-dateutil==2.9.0.post0
+pytz==2024.1
