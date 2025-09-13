@@ -1,0 +1,25 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "This project is based on data from my pharmacy in Ghana that I am tracking using R and shinyapp to develop a dashboard  for my staff and investors to know where we are financially",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "render": "node render.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kofboat/Caps.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kofboat/Caps/issues"
+  },
+  "homepage": "https://github.com/kofboat/Caps#readme",
+  "type": "module",
+  "dependencies": {
+    "puppeteer": "^22.15.0"
+  }
+}
