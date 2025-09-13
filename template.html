@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+/* ===== Print-safe styles (table-based, no CSS variables) ===== */
+body{font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#1f2937;}
+.wrapper{border:1px solid #d1d5db;border-radius:12px; padding:18px; box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.hrow{width:100%; border-collapse:collapse; margin-bottom:10px;}
+.leftTitle{font-size:18px; font-weight:800; letter-spacing:.3px; line-height:1.1;}
+.rightInfo{font-size:11px; text-align:right;}
+.sectionBar{background:#8a6a45; color:#fff; font-weight:700; font-size:12px; padding:6px 10px; border-radius:6px; margin:12px 0 6px;}
+.tbl{width:100%; border-collapse:collapse; table-layout:fixed;}
+.tbl td{padding:6px 6px; vertical-align:middle;}
+.lbl{width:28%; color:#374151; font-weight:600; white-space:nowrap;}
+.val{border:1px solid #d1d5db; border-radius:6px; min-height:24px; padding:5px 8px;}
+/* keep height even when empty */
+.val:empty::after{content:" ";} /* NBSP */
+.small{font-size:11px; color:#6b7280;}
+/* multi-row data boxes */
+.val.multiline{min-height:42px; line-height:1.35; white-space:pre-wrap;}
+/* compact table headers */
+.th{background:#f3f4f6; font-weight:700; border:1px solid #d1d5db; padding:6px 8px; text-align:left;}
+.cell{border:1px solid #d1d5db; padding:6px 8px; min-height:20px; border-radius:0;}
+/* spacing helpers */
+.mt{margin-top:10px;}
+</style>
+</head>
+<body>
+
+<div class="wrapper">
+
+  <!-- ===== Header ===== -->
+  <table class="hrow">
+    <tr>
+      <td class="leftTitle">APPLICATION<br>FOR EMPLOYMENT</td>
+      <td class="rightInfo">
+        <div><strong>Comfort Hands Home Healthcare</strong></div>
+        <div>505 Hamilton Ave, Suite 200, Linwood, NJ 08221</div>
+        <div class="small">comforthands.net • (609) 555-0000</div>
+        <div class="small">Submission ID: {entry_id} • Submitted: {submission_date}</div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- ===== Personal Information ===== -->
+  <div class="sectionBar">Personal Information</div>
+  <table class="tbl">
+    <tr>
+      <td class="lbl">Full Name:</td>
+      <td class="val">{first_name} {last_name}</td>
+      <td class="lbl">Date of Birth:</td>
+      <td class="val">{date_of_birth}</td>
+    </tr>
+    <tr>
+      <td class="lbl">Address:</td>
+      <td class="val" colspan="3">{address_1.address_line_1} {address_1.address_line_2}, {address_1.city}, {address_1.state} {address_1.zip}, {address_1.country}</td>
+    </tr>
+    <tr>
+      <td class="lbl">Email:</td>
+      <td class="val">{email}</td>
+      <td class="lbl">Phone:</td>
+      <td class="val">{phone}</td>
+    </tr>
+    <tr>
+      <td class="lbl">Nationality:</td>
+      <td class="val">{nationality}</td>
+      <td class="lbl">Marital Status:</td>
+      <td class="val">{marital_status}</td>
+    </tr>
+  </table>
+
+  <!-- ===== Position Information ===== -->
+  <div class="sectionBar">Position Information</div>
+  <table class="tbl">
+    <tr>
+      <td class="lbl">Position Applied For:</td>
+      <td class="val">{dropdown}</td>
+      <td class="lbl">Desired Salary:</td>
+      <td class="val">{desired_salary}</td>
+    </tr>
+    <tr>
+      <td class="lbl">Division:</td>
+      <td class="val">{division}</td>
+      <td class="lbl">Date Available to Start:</td>
+      <td class="val">{start_date_available}</td>
+    </tr>
+    <tr>
+      <td class="lbl">Transportation:</td>
+      <td class="val">{input_radio_4}</td>
+      <td class="lbl">Languages:</td>
+      <td class="val">{checkbox_3.Spanish} {checkbox_3.Creole} {checkbox_3.French} {checkbox_3.Other}</td>
+    </tr>
+  </table>
+
+  <!-- ===== Educational Background ===== -->
+  <div class="sectionBar">Educational Background</div>
+  <table class="tbl">
+    <tr>
+      <td class="th" style="width:30%">Division</td>
+      <td class="th" style="width:50%">Institution</td>
+      <td class="th" style="width:20%">Year of Completion</td>
+    </tr>
+    <tr>
+      <td class="cell">{edu_division_1}</td>
+      <td class="cell">{edu_institution_1}</td>
+      <td class="cell">{edu_year_1}</td>
+    </tr>
+    <tr>
+      <td class="cell">{edu_division_2}</td>
+      <td class="cell">{edu_institution_2}</td>
+      <td class="cell">{edu_year_2}</td>
+    </tr>
+  </table>
+
+  <!-- ===== Professional Background ===== -->
+  <div class="sectionBar">Professional Background</div>
+  <table class="tbl">
+    <tr>
+      <td class="th" style="width:28%">Company Name</td>
+      <td class="th" style="width:18%">Job Title</td>
+      <td class="th" style="width:34%">Responsibilities</td>
+      <td class="th" style="width:20%">Work Duration</td>
+    </tr>
+    <tr>
+      <td class="cell">{input_text_36}</td>
+      <td class="cell">{input_text_37}</td>
+      <td class="cell">{input_text_38}</td>
+      <td class="cell">{input_text_11} – {input_text_12}</td>
+    </tr>
+  </table>
+  <table class="tbl mt">
+    <tr>
+      <td class="lbl">Supervisor:</td>
+      <td class="val">{input_text_13}</td>
+      <td class="lbl">Supervisor Phone:</td>
+      <td class="val">{input_text_14}</td>
+    </tr>
+    <tr>
+      <td class="lbl">May we contact?</td>
+      <td class="val">{input_radio_1}</td>
+      <td class="lbl">Still Work Here?</td>
+      <td class="val">{input_radio}</td>
+    </tr>
+    <tr>
+      <td class="lbl">Employer Address:</td>
+      <td class="val" colspan="3">{address_3.address_line_1}, {address_3.city}, {address_3.state} {address_3.zip}</td>
+    </tr>
+  </table>
+
+  <!-- ===== Skills & Training / Licenses ===== -->
+  <div class="sectionBar">Skills & Training</div>
+  <table class="tbl">
+    <tr>
+      <td class="th" style="width:30%">Skill/Cert</td>
+      <td class="th" style="width:20%">Level</td>
+      <td class="th" style="width:20%">Year</td>
+      <td class="th" style="width:30%">Institute/Board</td>
+    </tr>
+    <tr>
+      <td class="cell">PALS / CPR / BCLS / ACLS</td>
+      <td class="cell">{input_radio_9.PALS} {input_radio_9.CPR} {input_radio_9.BCLS} {input_radio_9.ACLS}</td>
+      <td class="cell">{license_year}</td>
+      <td class="cell">{input_text_33}</td>
+    </tr>
+  </table>
+  <table class="tbl mt">
+    <tr>
+      <td class="lbl">License Type:</td>
+      <td class="val">{input_radio_7}</td>
+      <td class="lbl">License/Cert No.:</td>
+      <td class="val">{input_text_32}</td>
+    </tr>
+    <tr>
+      <td class="lbl">Expiration:</td>
+      <td class="val">{input_text_34}</td>
+      <td class="lbl">Suspended/Revoked?</td>
+      <td class="val">{input_radio_8}</td>
+    </tr>
+    <tr>
+      <td class="lbl">If yes, explain:</td>
+      <td class="val multiline" colspan="3">{input_text_35}</td>
+    </tr>
+  </table>
+
+  <!-- ===== Criminal Record ===== -->
+  <div class="sectionBar">Criminal Record</div>
+  <table class="tbl">
+    <tr>
+      <td class="lbl">Ever convicted of a crime?</td>
+      <td class="val">{input_radio_3}</td>
+      <td class="lbl">Explanation:</td>
+      <td class="val multiline">{input_text_26}</td>
+    </tr>
+  </table>
+
+  <!-- ===== Education (simple single entry your form collects) ===== -->
+  <div class="sectionBar">Education History (Summary)</div>
+  <table class="tbl">
+    <tr>
+      <td class="lbl">Highest Level:</td>
+      <td class="val">{input_radio_6}</td>
+      <td class="lbl">Graduation Date:</td>
+      <td class="val">{datetime_1}</td>
+    </tr>
+    <tr>
+      <td class="lbl">School Name:</td>
+      <td class="val">{input_text_28}</td>
+      <td class="lbl">School Address:</td>
+      <td class="val">{input_text_27}</td>
+    </tr>
+    <tr>
+      <td class="lbl">City / State / Zip:</td>
+      <td class="val" colspan="3">{input_text_29}, {input_text_30} {input_text_31}</td>
+    </tr>
+  </table>
+
+  <!-- ===== References ===== -->
+  <div class="sectionBar">References</div>
+  <table class="tbl">
+    <tr><td class="th">Name</td><td class="th">Title</td><td class="th">Address</td><td class="th">Phone/Email</td></tr>
+    <tr>
+      <td class="cell">{input_text_39}</td>
+      <td class="cell">{input_text_40}</td>
+      <td class="cell">{input_text_41}</td>
+      <td class="cell">{input_text_42}</td>
+    </tr>
+    <tr>
+      <td class="cell">{input_text_43}</td>
+      <td class="cell">{input_text_44}</td>
+      <td class="cell">{input_text_45}</td>
+      <td class="cell">{input_text_46}</td>
+    </tr>
+    <tr>
+      <td class="cell">{input_text_47}</td>
+      <td class="cell">{input_text_48}</td>
+      <td class="cell">{input_text_49}</td>
+      <td class="cell">{input_text_50}</td>
+    </tr>
+  </table>
+
+  <!-- ===== Attachments & Consents ===== -->
+  <div class="sectionBar">Attachments & Consents</div>
+  <table class="tbl">
+    <tr>
+      <td class="lbl">Resume/CV Attachment</td>
+      <td class="val">{file-upload}</td>
+      <td class="lbl">Cover Letter Attachment</td>
+      <td class="val">{cover_letter}</td>
+    </tr>
+    <tr>
+      <td class="lbl">Background Check Consent</td>
+      <td class="val">{checkbox_4}</td>
+      <td class="lbl">SMS Consent</td>
+      <td class="val">{input_radio_10}</td>
+    </tr>
+    <tr>
+      <td class="lbl">Signature (Name)</td>
+      <td class="val">{names_2.first_name} {names_2.last_name}</td>
+      <td class="lbl"></td>
+      <td class="val"></td>
+    </tr>
+  </table>
+
+</div>
+</body>
+</html>
+
